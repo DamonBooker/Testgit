@@ -1,0 +1,80 @@
+import java.util.*;
+
+public class Lab8Arrays {
+
+	public static void main(String[] args) {
+
+		
+		// Defines Arrays of Students Names, Home towns and Favorite
+		// Foods
+		String[] Names = { "John", "Kim", "Taylor", "Doreen", "Aaron", "Carlos", "Charlene", "Ty", "Stephanie",
+				"Damon", "Malcom", "Tracy", "Tania", "Lisa", "Kia", "Jessica", "Bryan", "Heather", "Jon",
+				"Pablo" };
+
+		String[] homeTown = { "MI", "MI", "NY", "MI", "MI", "NY", "MI", "MI", "NY", "WA", "MI", "MI", "NY",
+				"MI", "MI", "NY", "MI", "MI", "NY", "WA" };
+
+		String[] favFood = { "Burger", "Pizza", "Taco", "Steak", "Shrimp", "Chicken", "Potato Chips",
+				"Pot Roast", "Cake", "Donuts", "Burger", "Pizza", "Taco", "Steak", "Shrimp", "Chicken",
+				"Potato Chips", "Pot Roast", "Cake", "Donuts" };
+		
+		// Displays greeting header and requests integer input from user
+		System.out.println("Welcome to our JAVA class!");
+		System.out.println("Which student would you like to learn more about?");
+
+		// Receives input from user
+		Scanner scan1 = new Scanner(System.in);
+
+		// Defines answer as a String variable set to yes
+		// automatically continues unless n is input by user
+		String answer = "y";
+
+		// Loops the program if user enters y for yes
+		while (answer.equalsIgnoreCase("y")) {
+
+			System.out.println("Enter a number 1-20:");
+
+			// Defines input from user as variable input
+			int input = scan1.nextInt();
+
+			// Checks the variable input to make sure it's between 1-20
+			if (input <= 20 && input >= 01) {
+
+				
+
+				System.out.println("Name: " + Names[input - 1]);
+
+				System.out.println("What do you want to know about " + Names[input - 1] + "? "
+						+ "\nEnter 1 for Hometown or 2 for Favorite Food");
+
+				// Grabs input from Scanner for either "Home Town" Array or
+				// "Favorite Food" Array
+				input = scan1.nextInt();
+
+				// Evaluates input for values 1 or 2
+				if (input ==1)
+
+					// Displays "Home Town" value for the input of 1
+					System.out.println("Home state: " + homeTown[input - 1]);
+
+				// Displays "Favorite Food" value for the input of 2
+				else if (input ==2)
+					System.out.println("Favorite food: " + favFood[input - 1]);
+				
+				else 
+					System.out.println("This data does not exist.");
+
+
+				// Asks user if they want to continue y or n
+				System.out.println("\nWould you like to continue?" + "\npress y or n and then Enter: ");
+				Scanner scan3 = new Scanner(System.in);
+				answer = scan3.next();
+
+				
+			} else
+				System.out.println("\nThis student does not exist." + "\nPlease try again. (enter a number 1-20):");
+		}
+
+	}
+
+}
